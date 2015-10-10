@@ -1,6 +1,6 @@
 OUT_DIR?=/tmp
 MOZDIR=$(OUT_DIR)/mozjpeg
-CONFIGOPTIONS=--host="$(HOST)" --build="$(TARGET)" --enable-static --disable-shared --without-arith-enc --without-arith-dec --without-java --without-turbojpeg
+CONFIGOPTIONS=--host="$(HOST)" --build="$(TARGET)" --enable-static --disable-shared --without-arith-enc --without-arith-dec --without-java --without-turbojpeg --with-pic
 
 all: $(OUT_DIR)/lib/libjpeg.a
 	@echo "cargo:rustc-flags=-l static=jpeg -L native=$(OUT_DIR)/lib"
